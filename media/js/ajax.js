@@ -36,18 +36,16 @@
 						$(on_play).hide();
 						$(before_play).show();
 					},
-					complete: function () {
-						$(before_play).hide();
-					},
 					success: function (response) {
 						if (response.success) {
 							var data = response.data;
 							$(video).attr('src', data.src);
 							$(video).attr('type', 'video/' + data.type);
-
 							$(video).get(0).play();
-							$(on_play).show();
-
+							$(video).on('play', function () {
+								$(before_play).hide();
+								$(on_play).show();
+							});
 							$(video).on('ended', function () {
 								$(on_play).hide();
 								$(after_play).show();
@@ -60,11 +58,13 @@
 							});
 						}
 						else {
+							$(before_play).hide();
 							$(after_play).show();
 							console.error(response.message);
 						}
 					},
 					error: function (response) {
+						$(before_play).hide();
 						$(after_play).show();
 						console.error(response.message);
 					}
