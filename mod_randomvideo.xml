@@ -30,11 +30,12 @@
 					<form>
 						<field name="title" type="text"
 							   label="MOD_RANDOMVIDEO_PARAMS_VIDEO_TITLE"
-							   hint="MOD_RANDOMVIDEO_PARAMS_VIDEO_TITLE"/>
+							   hint="MOD_RANDOMVIDEO_PARAMS_VIDEO_TITLE"
+							   class="input-xlarge"/>
 						<field name="src" type="text"
 							   label="MOD_RANDOMVIDEO_PARAMS_VIDEO_SRC"
 							   hint="MOD_RANDOMVIDEO_PARAMS_VIDEO_SRC"
-							   class="input-xlarge"/>
+							   class="input-xxlarge"/>
 					</form>
 				</field>
 			</fieldset>

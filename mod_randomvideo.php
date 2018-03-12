@@ -10,3 +10,15 @@
 
 defined('_JEXEC') or die;
 
+use Joomla\CMS\Helper\ModuleHelper;
+use Joomla\Registry\Registry;
+use Joomla\CMS\Factory;
+use Joomla\CMS\Uri\Uri;
+
+$registry = new Registry();
+$registry->set('module_id', $module->id);
+$registry->set('Itemid', Factory::getApplication()->input->get('Itemid'));
+$registry->set('root', Uri::root(true));
+$ajax_data = $registry->toString();
+
+require ModuleHelper::getLayoutPath($module->module, $params->get('layout', 'default'));
