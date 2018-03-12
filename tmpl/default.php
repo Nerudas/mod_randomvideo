@@ -19,6 +19,9 @@ HTMLHelper::_('script', 'media/mod_randomvideo/js/ajax.min.js', array('version' 
 <div id="<?php echo $module->module . '_' . $module->id; ?>" data-mod_randomvideo='<?php echo $ajax_data; ?>'>
 	<div class="before_play" style="display: none;">
 		<div><strong>before_play</strong></div>
+		<div>
+			<a class="stop_video">stop_video</a>
+		</div>
 	</div>
 	<div class="on_play" style="display: none;">
 		<div><strong>on_play</strong></div>
