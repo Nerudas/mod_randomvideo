@@ -35,6 +35,11 @@
 						$(after_play).hide();
 						$(on_play).hide();
 						$(before_play).show();
+
+						$(stop_video).on('click', function () {
+							$(before_play).hide();
+							$(after_play).show();
+						});
 					},
 					success: function (response) {
 						if (response.success) {
@@ -56,8 +61,6 @@
 							});
 							$(stop_video).on('click', function () {
 								$(video).get(0).pause();
-								$(on_play).hide();
-								$(after_play).show();
 							});
 						}
 						else {
