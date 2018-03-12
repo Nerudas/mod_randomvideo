@@ -56,6 +56,8 @@
 							});
 							$(stop_video).on('click', function () {
 								$(video).get(0).pause();
+								$(on_play).hide();
+								$(after_play).show();
 							});
 						}
 						else {
