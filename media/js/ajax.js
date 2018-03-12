@@ -18,7 +18,8 @@
 				after_play = $(block).find('.after_play'),
 				get_video = $(block).find('.get_video'),
 				video = $(block).find('video'),
-				stop_video = $(block).find('.stop_video');
+				stop_video = $(block).find('.stop_video'),
+				stop_load = $(block).find('.stop_load');
 
 			$(page_ready).show();
 
@@ -36,7 +37,7 @@
 						$(on_play).hide();
 						$(before_play).show();
 
-						$(stop_video).on('click', function () {
+						$(stop_load).on('click', function () {
 							$(before_play).hide();
 							$(after_play).show();
 						});

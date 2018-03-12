@@ -20,7 +20,7 @@ HTMLHelper::_('script', 'media/mod_randomvideo/js/ajax.min.js', array('version' 
 	<div class="before_play" style="display: none;">
 		<div><strong>before_play</strong></div>
 		<div>
-			<a class="stop_video">stop_video</a>
+			<a class="stop_load">stop_load</a>
 		</div>
 	</div>
 	<div class="on_play" style="display: none;">
