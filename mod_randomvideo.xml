@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension version="3.8" type="module" client="site" method="upgrade">
+	<name>MOD_RANDOMVIDEO</name>
+	<author>Nerudas</author>
+	<creationDate>March 2018</creationDate>
+	<copyright>Copyright (c) 2015 - 2018 Nerudas. All rights reserved.</copyright>
+	<license>http://www.gnu.org/copyleft/gpl.html GNU/GPL</license>
+	<authorEmail>support@nerudas.ru</authorEmail>
+	<authorUrl>nerudas.ru</authorUrl>
+	<version>1.0.0</version>
+	<description>MOD_RANDOMVIDEO_DESCRIPTION</description>
+	<languages folder="language">
+		<language tag="en-GB">en-GB/en-GB.mod_randomvideo.ini</language>
+		<language tag="en-GB">en-GB/en-GB.mod_randomvideo.sys.ini</language>
+		<language tag="ru-RU">ru-RU/ru-RU.mod_randomvideo.ini</language>
+		<language tag="ru-RU">ru-RU/ru-RU.mod_randomvideo.sys.ini</language>
+	</languages>
+	<files>
+		<filename module="mod_randomvideo">mod_randomvideo.php</filename>
+		<filename>helper.php</filename>
+		<folder>tmpl</folder>
+	</files>
+	<config>
+		<fields name="params">
+			<fieldset name="basic">
+				<field name="videos" type="subform"
+					   label="MOD_RANDOMVIDEO_PARAMS_VIDEOS"
+					   multiple="true"
+					   layout="">
+					<form>
+						<field name="title" type="text"
+							   label="MOD_RANDOMVIDEO_PARAMS_VIDEO_TITLE"
+							   hint="MOD_RANDOMVIDEO_PARAMS_VIDEO_TITLE"/>
+						<field name="src" type="text"
+							   label="MOD_RANDOMVIDEO_PARAMS_VIDEO_SRC"
+							   hint="MOD_RANDOMVIDEO_PARAMS_VIDEO_SRC"
+							   class="input-xlarge"/>
+					</form>
+				</field>
+			</fieldset>
+			<fieldset name="advanced">
+				<field name="layout" type="modulelayout"
+					   label="JFIELD_ALT_LAYOUT_LABEL"
+					   description="JFIELD_ALT_MODULE_LAYOUT_DESC"/>
+				<field name="moduleclass_sfx" type="textarea"
+					   label="COM_MODULES_FIELD_MODULECLASS_SFX_LABEL"
+					   description="COM_MODULES_FIELD_MODULECLASS_SFX_DESC"
+					   rows="3"/>
+				<field name="cache" type="list"
+					   label="COM_MODULES_FIELD_CACHING_LABEL"
+					   description="COM_MODULES_FIELD_CACHING_DESC"
+					   default="1">
+					<option value="1">JGLOBAL_USE_GLOBAL</option>
+					<option value="0">COM_MODULES_FIELD_VALUE_NOCACHING</option>
+				</field>
+				<field name="cache_time" type="text"
+					   label="COM_MODULES_FIELD_CACHE_TIME_LABEL"
+					   description="COM_MODULES_FIELD_CACHE_TIME_DESC"
+					   default="900"/>
+				<field name="cachemode" type="hidden"
+					   default="static">
+					<option value="static">Static</option>
+				</field>
+			</fieldset>
+		</fields>
+	</config>
+	<media destination="mod_randomvideo" folder="media">
+		<folder>js</folder>
+	</media>
+	<updateservers>
+		<server type="extension" priority="1" name="MOD_RANDOMVIDEO">
+			https://update.nerudas.ru/?extension=mod_randomvideo
+		</server>
+	</updateservers>
+</extension>
