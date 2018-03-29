@@ -53,31 +53,13 @@ class modRandomVideoHelper
 			return false;
 		}
 
-		$current = trim(Factory::getApplication()->input->get('current', '', 'raw'), '/\/');
 		$videos  = ArrayHelper::fromObject($videos, false);
 		$count   = count($videos);
 		$keys    = array_keys($videos);
 
-
 		$key        = $keys[rand(0, ($count - 1))];
 		$video      = $videos[$key];
 		$video->src = trim($video->src, '/\/');
-		$try        = 1;
-		while ($video->src == $current || !JFile::exists(JPATH_ROOT . '/' . $video->src) || $try <= $count || empty($video->src))
-		{
-			$key        = $keys[rand(0, ($count - 1))];
-			$video      = $videos[$key];
-			$video->src = trim($video->src, '/\/');
-			$try++;
-		}
-		if ($try > $count && $video->src == $current || !JFile::exists(JPATH_ROOT . '/' . $video->src) || empty($video->src))
-		{
-
-			throw new Exception(Text::_('MOD_JFORM_ERROR_VIDEO_NOT_FOUND'), 404);
-
-			return false;
-
-		}
 
 		$video->type = JFile::getExt(JPATH_ROOT . '/' . $video->src);
 		$video->src  = Uri::root(true) . '/' . $video->src;
