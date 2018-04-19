@@ -1,7 +1,7 @@
 # Random Video Module
 Module for outputting random video
 
-**Supported Joomla versions:** 3.8.0 or later  
+**Supported Joomla versions:** 3.8.0 and later  
 
 
 ## Internal project - No support
